@@ -11,9 +11,9 @@ import javax.validation.constraints.Size;
 @Entity
 public class Event extends AbstractEntity {
 
-    @NotBlank(message = "Name is required")
-    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
-    private String name;
+//    @NotBlank(message = "Name is required")
+//    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
+//    private String name;
 
     @Size(max = 500, message = "Description too long!")
     private String description;
@@ -25,7 +25,8 @@ public class Event extends AbstractEntity {
     private EventType type;
 
     public Event(String name, String description, String contactEmail, EventType type) {
-        this.name = name;
+        super(name);
+//        this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
         this.type = type;
@@ -33,13 +34,13 @@ public class Event extends AbstractEntity {
 
     public Event() {}
 
-    public String getName() {
-        return name;
-    }
+//    public String getName() {
+//        return name;
+//    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
     public String getDescription() {
         return description;
@@ -65,9 +66,9 @@ public class Event extends AbstractEntity {
         this.type = type;
     }
 
-    @Override
-    public String toString() {
-        return name;
-    }
+//    @Override
+//    public String toString() {
+//        return name;
+//    }
 
 }
